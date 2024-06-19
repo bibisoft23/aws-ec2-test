@@ -1,10 +1,17 @@
 from django.http import HttpResponse
 from decouple import config
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+VAR = os.environ.get("VAR")
 
 def index(request):
-    string=config('VAR')
-    # string=get_secret()
-    return HttpResponse(string)
+
+    return HttpResponse(VAR)
 
 
 # import boto3
