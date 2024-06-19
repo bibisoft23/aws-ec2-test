@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-
+from decouple import config
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    string=config('VAR')
+    return HttpResponse(string)
