@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from decouple import config
 
 def index(request):
-    string=config('VAR')
+    # string=config('VAR')
     string=get_secret()
     return HttpResponse(string)
 
